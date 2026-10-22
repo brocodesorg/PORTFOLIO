@@ -1,7 +1,7 @@
 services:
   - type: static
     name: brocodes-portfolio
-    buildCommand: npm install && npm run build
+    buildCommand: npm install --legacy-peer-deps && npm run build
     staticPublishPath: out
     routes:
       - type: rewrite
