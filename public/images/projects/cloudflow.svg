@@ -1,0 +1,51 @@
+<svg width="800" height="500" viewBox="0 0 800 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgCloud" x1="0" y1="0" x2="800" y2="500" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0E0720"/>
+      <stop offset="100%" stop-color="#1B0A33"/>
+    </linearGradient>
+    <linearGradient id="purpleCloud" x1="200" y1="100" x2="600" y2="400" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#A855F7"/>
+      <stop offset="100%" stop-color="#EC4899"/>
+    </linearGradient>
+    <filter id="cloudGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="7" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bgCloud)"/>
+
+  <!-- Kubernetes Pod Mesh -->
+  <g stroke="#A855F7" stroke-width="1.5" opacity="0.3">
+    <rect x="180" y="160" width="100" height="80" rx="10" stroke-dasharray="4 4"/>
+    <rect x="350" y="120" width="100" height="80" rx="10" stroke-dasharray="4 4"/>
+    <rect x="520" y="160" width="100" height="80" rx="10" stroke-dasharray="4 4"/>
+    <rect x="260" y="290" width="110" height="80" rx="10" stroke-dasharray="4 4"/>
+    <rect x="440" y="290" width="110" height="80" rx="10" stroke-dasharray="4 4"/>
+  </g>
+
+  <!-- Connective Pipeline Nodes -->
+  <path d="M280 200 H350 M450 160 H520 M230 240 L310 290 M570 240 L500 290 M370 330 H440" 
+        stroke="url(#purpleCloud)" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Cluster Cores -->
+  <circle cx="230" cy="200" r="16" fill="#A855F7" filter="url(#cloudGlow)"/>
+  <circle cx="400" cy="160" r="22" fill="#EC4899" filter="url(#cloudGlow)"/>
+  <circle cx="570" cy="200" r="16" fill="#8B5CF6" filter="url(#cloudGlow)"/>
+  <circle cx="315" cy="330" r="18" fill="#D946EF" filter="url(#cloudGlow)"/>
+  <circle cx="495" cy="330" r="18" fill="#6366F1" filter="url(#cloudGlow)"/>
+
+  <!-- Floating Badges -->
+  <g transform="translate(60, 60)">
+    <rect width="230" height="56" rx="8" fill="#1C1033" stroke="#4C1D95" stroke-width="1.5"/>
+    <text x="20" y="24" fill="#C084FC" font-family="monospace" font-size="11" font-weight="600">CLUSTER SYNCHRONIZATION</text>
+    <text x="20" y="44" fill="#FFFFFF" font-family="sans-serif" font-size="15" font-weight="700">128 PODS BALANCED</text>
+  </g>
+
+  <g transform="translate(510, 390)">
+    <rect width="230" height="56" rx="8" fill="#1C1033" stroke="#A855F7" stroke-width="1.5"/>
+    <text x="20" y="24" fill="#EC4899" font-family="monospace" font-size="11" font-weight="600">PIPELINE SPEED</text>
+    <text x="20" y="44" fill="#F472B6" font-family="sans-serif" font-size="15" font-weight="700">18S COLD DEPLOY</text>
+  </g>
+</svg>
